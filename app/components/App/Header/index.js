@@ -1,4 +1,5 @@
 import React from 'react';
+import * as styles from '../styles';
 
 
 class Header extends React.Component {
@@ -9,7 +10,7 @@ class Header extends React.Component {
 
     render() {
         return (
-            <h2>My Pomodoro Clock</h2>
+            <h2 style={styles.header}>My Pomodoro Clock</h2>
         );
     }
 }

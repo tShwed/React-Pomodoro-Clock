@@ -10,6 +10,7 @@ import {
     Row, 
     Col
 } from 'react-bootstrap';
+import './styles.js';
 
 //Components 
 import Header from './Header';
@@ -183,26 +184,36 @@ class App extends React.Component {
           this.setState({ breakTime: this.state.breakTime - 1 });
         }, 1000);
       }
-    
-    //Changing from Session to Break
 
     render() { 
         return (
             <MuiThemeProvider>
                 <div>
                     <Header />
-                    <Break 
-                        breakTime={this.state.breakTime} 
-                        addBreakTime={this.addBreakTime} 
-                        subtractBreakTime={this.subtractBreakTime} 
-                        calculateTime={this.calculateBreakTime}
-                        />
-                    <Session 
-                        sessionTime={this.state.time} 
-                        addSessionTime={this.addSessionTime} 
-                        subtractSessionTime={this.subtractSessionTime}
-                        calculateTime={this.calculateTime} 
-                        />
+                    <div>
+                        <Row>
+                            <Col md={3}>
+                            </Col>
+                            <Col md={3}>
+                            <Break 
+                                breakTime={this.state.breakTime} 
+                                addBreakTime={this.addBreakTime} 
+                                subtractBreakTime={this.subtractBreakTime} 
+                                calculateTime={this.calculateBreakTime}
+                                />
+                            </Col>
+                            <Col md={3}>  
+                            <Session 
+                                sessionTime={this.state.time} 
+                                addSessionTime={this.addSessionTime} 
+                                subtractSessionTime={this.subtractSessionTime}
+                                calculateTime={this.calculateTime} 
+                                />
+                            </Col>
+                            <Col md={3}>
+                            </Col>
+                        </Row>
+                    </div>
                     <Timer 
                         //state
                         breakTime={this.state.breakTime} 
